@@ -34,7 +34,7 @@ Add the following code after the previous code to define your D3 scales. Scales 
 var x = d3.scale.ordinal()
                 .rangeRoundBands([0, width], .1);
             
-            var y = d3.scale.linear()
+var y = d3.scale.linear()
                 .range([height, 0]);
 ```
 ![](https://raw.githubusercontent.com/deldersveld/power-bi-training/master/custom-visuals/assets/005.PNG)
