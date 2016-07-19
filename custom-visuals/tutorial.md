@@ -38,3 +38,34 @@ var y = d3.scale.linear()
                 .range([height, 0]);
 ```
 ![](https://raw.githubusercontent.com/deldersveld/power-bi-training/master/custom-visuals/assets/005.PNG)
+
+Add the following code after the prior code to create your D3 axes. Note that they reference the x and y scales that you previously created. In addition, the x axis will appear on the bottom while the y axis will appear on the left. The y axis will also include 10 ticks.
+```
+var xAxis = d3.svg.axis()
+                .scale(x)
+                .orient("bottom");
+            
+var yAxis = d3.svg.axis()
+                .scale(y)
+                .orient("left")
+                .ticks(10);
+```
+![](https://raw.githubusercontent.com/deldersveld/power-bi-training/master/custom-visuals/assets/006.PNG)
+
+Add the following code 
+```
+var svg = this.svg;
+svg.append("g")
+		      .attr("class", "y axis")
+		      .call(yAxis)
+.append("text")
+		      .attr("transform", "rotate(-90)")
+		      .attr("y", 6)
+		      .attr("dy", ".71em")
+		      .style("text-anchor", "end")
+		      .text("My Y Label");
+```
+![](https://raw.githubusercontent.com/deldersveld/power-bi-training/master/custom-visuals/assets/007.PNG)
+
+Click *Compile + Run* and note that the y axis label now appears in the preview pane. If you Inspect the preview pane (right-click + Inspect), you will see a number of "g" elements when you expand the original svg element. Most of these correspond with the ten ticks you defined for the y axis, but you should also see the axis label and other elements.
+![](https://raw.githubusercontent.com/deldersveld/power-bi-training/master/custom-visuals/assets/008.PNG)
