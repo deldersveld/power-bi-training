@@ -2,6 +2,19 @@ Open the following link, then copy and paste the template code into DevTools. Th
 
 https://gist.githubusercontent.com/deldersveld/dbfc69576c0c80bc80cd67ea1593fe10/raw/cd966f988f8c7bbdd1cdd07afd3982737629ad30/PowerBITemplate.ts
 
+Add the following code just above *init*()
 ```
-asdfds
+private svg: D3.Selection;
 ```
+![](https://raw.githubusercontent.com/deldersveld/power-bi-training/master/custom-visuals/assets/001.PNG)
+
+Add the following code within *init*(). This creates the initial SVG element and assigns a class to it for later reference.
+```
+var svg = this.svg = d3.select(options.element.get(0))
+                .append('svg')
+            	.attr("class", "tutorial-svg");
+```
+![](https://raw.githubusercontent.com/deldersveld/power-bi-training/master/custom-visuals/assets/002.PNG)
+
+Click the *Compile and Run* button. Note that nothing visually appears in the preview area to the right. Right-click in the preview area and select *Inspect* or *Inspect Element*, and you should see your SVG element in developer tools.
+![](https://raw.githubusercontent.com/deldersveld/power-bi-training/master/custom-visuals/assets/003.PNG)
