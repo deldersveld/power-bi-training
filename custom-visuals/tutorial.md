@@ -52,7 +52,7 @@ var yAxis = d3.svg.axis()
 ```
 ![](https://raw.githubusercontent.com/deldersveld/power-bi-training/master/custom-visuals/assets/006.PNG)
 
-Add the following code 
+Add the following code to append text and styling to your y axis.
 ```
 var svg = this.svg;
 svg.append("g")
